@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 
 import * as ACTIONS from '../store/actions/actions';
+import Auth from '../utils/auth';
 
 import {connect} from 'react-redux';
+
+const auth = new Auth();
 
 class Container1 extends Component {
 
@@ -11,6 +14,7 @@ class Container1 extends Component {
 
     return (
         <div>
+          <button onClick={() => auth.login()}>Login</button>
           <button onClick={() => console.log(this.props.stateprop1)}>Get State</button>
           <button onClick={() => this.props.action1()}>Dispatch Action 1</button>
           <button onClick={() => this.props.action2()}>Dispatch Action 2</button>
