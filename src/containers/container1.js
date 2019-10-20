@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import Component1 from '../functional/component1';
 
-import * as ACTION_TYPES from '../store/actions/action_types';
 import * as ACTIONS from '../store/actions/actions';
 
 import {connect} from 'react-redux';
@@ -13,14 +11,14 @@ class Container1 extends Component {
 
     return (
         <div>
-          <button onClick={() => console.log(this.props.usertext)}>Get State</button>
+          <button onClick={() => console.log(this.props.stateprop1)}>Get State</button>
           <button onClick={() => this.props.action1()}>Dispatch Action 1</button>
           <button onClick={() => this.props.action2()}>Dispatch Action 2</button>
           <button onClick={() => this.props.action_creator1()}>Dispatch Action Creator 1</button>
           <button onClick={() => this.props.action_creator2()}>Dispatch Action Creator 2</button>
           <button onClick={() => this.props.action_creator3(user_text)}>Dispatch Action Creator 3</button>
-          {this.props.usertext
-            ? <h1>{this.props.usertext}</h1>
+          {this.props.stateprop1
+            ? <h1>{this.props.user_input}</h1>
             : null
           }
         </div>
@@ -30,8 +28,8 @@ class Container1 extends Component {
 
 function mapStateToProps(state) {
   return {
-    stateprop1: state.stateprop1,
-    usertext: state.user_text,
+    stateprop1: state.reducer1.stateprop1,
+    user_input: state.user_reducer.user_text,
   };
 }
 
