@@ -8,7 +8,6 @@ class App extends Component {
     return (
         <div>
           React
-          <Container1/>
         </div>
     );
   }
