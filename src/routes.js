@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 
 import Component1 from './functional/component1';
-import Component2 from './functional/component2';
-import Component3 from './functional/component3';
 
 import Container1 from './containers/container1';
 import Header from './containers/header';
@@ -19,10 +17,8 @@ class Routes extends Component {
               <Header/>
               <Switch>
                 <Route exact path="/" component={Container1}/>
-                <Route path="/component1"
+                <Route path="/component/:id"
                        render={(props) => <Component1 {...props}/>}/>
-                <Route path="/component2" component={Component2}/>
-                <Route path="/component3" component={Component3}/>
               </Switch>
             </div>
           </Router>

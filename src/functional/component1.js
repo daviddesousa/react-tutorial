@@ -2,7 +2,7 @@ import React from 'react';
 
 const Component1 = props => (
     <div>
-      Component1
+      Component1 {props.match.params.id}
       {console.log(props)}
     </div>
 );
