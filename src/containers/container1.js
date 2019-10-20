@@ -2,37 +2,29 @@ import React, {Component} from 'react';
 import Component1 from '../functional/component1';
 
 class Container1 extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      stateprop1: 'Our Initial State',
-      stateprop2: 5,
-    };
-  }
+  state = {
+    value: '',
+  };
 
-  // Correct
-  changeState = () => (
-      this.setState({
-        stateprop2: this.state.stateprop2 + 1,
-        stateprop1: this.state.stateprop1 + 'L',
-      })
+  handleChange = (event) => (
+      this.setState({value: event.target.value})
   );
 
-  // Correct
-  changeState2 = () => (
-      this.setState({
-        stateprop1: this.state.stateprop1 + 'L',
-      })
-  );
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(this.state.value);
+  };
 
   render() {
     return (
         <div>
-          <button onClick={() => this.changeState()}>Change State</button>
-          <button onClick={() => this.changeState2()}>Change State 2</button>
-          <br/>
-          <Component1 prop1={this.state.stateprop1}/>
+          {this.state.value}
+          <form onSubmit={this.handleSubmit}>
+            <label>Name</label>
+            <input id="name" onChange={this.handleChange} type="text"/>
+            <button type="submit">Submit</button>
+          </form>
         </div>
     );
   }
