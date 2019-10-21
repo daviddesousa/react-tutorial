@@ -22,7 +22,7 @@ class AuthCheck extends Component {
   }
 }
 
-function mapStateToProps(dispatch) {
+function mapStateToProps(state) {
   return {
 
   };
