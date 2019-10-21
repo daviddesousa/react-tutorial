@@ -18,12 +18,15 @@ class Header extends Component {
           <Link to="/" style={{padding: '5px'}}>
             Home
           </Link>
+          <Link to="/profile" style={{padding: '5px'}}>
+            Profile
+          </Link>
           <Link to="/privateroute" style={{padding: '5px'}}>
             Private Route
           </Link>
           {!this.props.is_authenticated
-            ? <button onClick={() => this.props.auth.login()}>Login</button>
-            : <button onClick={() => this.props.auth.logout()}>Logout</button>
+              ? <button onClick={() => this.props.auth.login()}>Login</button>
+              : <button onClick={() => this.props.auth.logout()}>Logout</button>
           }
           {this.state.nums.map(num =>
               <Link key={num.id} to={{pathname: '/component/' + num.id}}

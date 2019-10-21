@@ -9,6 +9,8 @@ import Auth from './utils/auth';
 
 import Container1 from './containers/container1';
 import Header from './containers/header';
+import Profile from './containers/profile';
+
 import history from './utils/history';
 import AuthCheck from './utils/authcheck';
 
@@ -55,6 +57,8 @@ class Routes extends Component {
 
                 <PrivateRoute path="/privateroute" auth={auth}
                               component={ProtectedRoute}/>
+                <PrivateRoute path="/profile" auth={auth}
+                              component={Profile}/>
               </Switch>
             </div>
           </Router>
